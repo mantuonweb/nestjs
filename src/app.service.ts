@@ -2,7 +2,10 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World! Your NestJS application is running successfully.';
+  info(): any {
+    return {
+      version: '1.0.0',
+      timestamp: new Date().toISOString(),
+    };
   }
 }
