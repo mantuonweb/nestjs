@@ -4,10 +4,3 @@ db.createUser({
   pwd: 'example',
   roles: ['root']
 });
-
-// db = db.getSiblingDB('yourapp');
-// db.createUser({
-//   user: 'appuser',
-//   pwd: 'apppass',
-//   roles: ['readWrite']
-// });
