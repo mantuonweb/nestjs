@@ -7,6 +7,8 @@ import { AppConfigModule } from './config/config.module';
 import { AppConfigService } from './config/config.service';
 import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.entity';
+import { Customer } from './customer/entities/customer.entity';
+import { CustomersModule } from './customer/customers.module';
 
 @Module({
   imports: [
@@ -17,12 +19,13 @@ import { User } from './users/entities/user.entity';
       imports: [AppConfigModule],
       useFactory: (configService: AppConfigService) => ({
         ...configService.databaseConfig,
-        entities: [User], // Explicitly include entities
+        entities: [User,Customer], // Explicitly include entities
         synchronize: true, // Only for development
       }),
       inject: [AppConfigService],
     }),
     UsersModule,
+    CustomersModule
   ],
   controllers: [AppController],
   providers: [AppService],
