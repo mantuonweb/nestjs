@@ -6,9 +6,6 @@ export class Customer {
   @ObjectIdColumn()
   _id: ObjectId;
 
-  @Column({ unique: true })
-  customerCode: string; // Optional unique identifier besides _id
-
   @Column()
   firstName: string;
 
